@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Orbital Gravity Simulation</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Space Canvas Background -->
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <!-- Main Container -->
+    <div class="simulation-layout">
+
+        <!-- Header & Navigation -->
+        <header class="sim-header">
+            <a href="../index.html" class="back-btn">← Back to Orbits</a>
+            <div class="header-title">
+                <h1>Gravity & Space Simulation</h1>
+                <span class="sub-title">Orbital Mechanics & Planetary Motion</span>
+            </div>
+        </header>
+
+        <!-- Main Workplace -->
+        <main class="sim-workspace">
+
+            <!-- Canvas Simulation Screen -->
+            <div class="canvas-container">
+                <canvas id="sim-canvas"></canvas>
+
+                <!-- On-Screen Metrics Display -->
+                <div class="metrics-overlay">
+                    <div class="metric-card">
+                        <span class="metric-label">Orbital Velocity (v)</span>
+                        <span class="metric-value" id="val-velocity">0.00 km/s</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Orbital Period (T)</span>
+                        <span class="metric-value" id="val-period">0.00 days</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Distance to Star (r)</span>
+                        <span class="metric-value" id="val-distance">0.00 AU</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <aside class="control-panel">
+                <h2>Orbital Parameters</h2>
+
+                <!-- Star Mass Slider -->
+                <div class="control-group">
+                    <label for="input-mass">Central Star Mass ($M$): <span id="label-mass">1.0</span> Solar Mass</label>
+                    <input type="range" id="input-mass" min="0.5" max="3.0" step="0.1" value="1.0">
+                </div>
+
+                <!-- Initial Distance Slider -->
+                <div class="control-group">
+                    <label for="input-distance">Orbit Distance ($r$): <span id="label-distance">1.0</span> AU</label>
+                    <input type="range" id="input-distance" min="0.5" max="2.5" step="0.1" value="1.0">
+                </div>
+
+                <!-- Initial Velocity Slider -->
+                <div class="control-group">
+                    <label for="input-orbit-speed">Initial Push Speed: <span id="label-orbit-speed">100</span>%</label>
+                    <input type="range" id="input-orbit-speed" min="50" max="150" value="100">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="btn-start" class="primary-btn">Simulate 🌌</button>
+                    <button id="btn-reset" class="secondary-btn">Reset</button>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/space-animation.js"></script>
+    <script src="../js/gravity-sim.js"></script>
+</body>
+
+</html>

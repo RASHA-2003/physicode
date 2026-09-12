@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Modern Physics Simulation</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <div class="simulation-layout">
+        <header class="sim-header">
+            <a href="../index.html" class="back-btn">← Back to Orbits</a>
+            <div class="header-title">
+                <h1>Modern Physics</h1>
+                <span class="sub-title">Photoelectric Effect Lab</span>
+            </div>
+        </header>
+
+        <main class="sim-workspace">
+            <div class="canvas-container">
+                <canvas id="sim-canvas"></canvas>
+                <div class="metrics-overlay">
+                    <div class="metric-card">
+                        <span class="metric-label">Photon Energy ($E$)</span>
+                        <span class="metric-value" id="val-energy">0.00 eV</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Max Electron Kinetic Energy ($K_{max}$)</span>
+                        <span class="metric-value" id="val-ke">0.00 eV</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="control-panel">
+                <h2>Quantum Controls</h2>
+                <div class="control-group">
+                    <label for="input-wavelength">Light Wavelength ($\lambda$): <span id="label-wavelength">400</span>
+                        nm</label>
+                    <input type="range" id="input-wavelength" min="200" max="700" value="400">
+                </div>
+                <div class="control-group">
+                    <label for="input-work">Metal Work Function ($\Phi$)</label>
+                    <select id="input-work">
+                        <option value="2.14">Cesium (2.14 eV)</option>
+                        <option value="2.30" selected>Sodium (2.30 eV)</option>
+                        <option value="4.70">Copper (4.70 eV)</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button id="btn-toggle" class="primary-btn">Shine Light 💡</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/space-animation.js"></script>
+    <script src="../js/modern-sim.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Fluid Dynamics & Buoyancy Simulation</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Space Canvas Background -->
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <!-- Main Container -->
+    <div class="simulation-layout">
+
+        <!-- Header & Navigation -->
+        <header class="sim-header">
+            <a href="../index.html" class="back-btn">← Back to Orbits</a>
+            <div class="header-title">
+                <h1>Fluid Dynamics</h1>
+                <span class="sub-title">Archimedes Buoyancy Lab</span>
+            </div>
+        </header>
+
+        <!-- Main Workplace -->
+        <main class="sim-workspace">
+
+            <!-- Canvas Simulation Screen -->
+            <div class="canvas-container">
+                <canvas id="sim-canvas"></canvas>
+
+                <!-- On-Screen Metrics Display -->
+                <div class="metrics-overlay">
+                    <div class="metric-card">
+                        <span class="metric-label">Buoyant Force ($F_b$)</span>
+                        <span class="metric-value" id="val-buoyancy">0.00 N</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Gravity Force ($F_g$)</span>
+                        <span class="metric-value" id="val-gravity">0.00 N</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Submerged Vol</span>
+                        <span class="metric-value" id="val-submerged">0 %</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <aside class="control-panel">
+                <h2>Fluid Parameters</h2>
+
+                <!-- Object Material Select -->
+                <div class="control-group">
+                    <label for="input-material">Object Density ($\rho_{obj}$)</label>
+                    <select id="input-material">
+                        <option value="250">Wood (250 kg/m³)</option>
+                        <option value="920">Ice (920 kg/m³)</option>
+                        <option value="1000">Equal Density (1000 kg/m³)</option>
+                        <option value="2700">Aluminum (2700 kg/m³)</option>
+                        <option value="7800">Steel (7800 kg/m³)</option>
+                    </select>
+                </div>
+
+                <!-- Fluid Type Select -->
+                <div class="control-group">
+                    <label for="input-fluid">Liquid Type ($\rho_{fluid}$)</label>
+                    <select id="input-fluid">
+                        <option value="1000" selected>Water (1000 kg/m³)</option>
+                        <option value="800">Oil (800 kg/m³)</option>
+                        <option value="1025">Seawater (1025 kg/m³)</option>
+                        <option value="13600">Mercury (13600 kg/m³)</option>
+                    </select>
+                </div>
+
+                <!-- Object Volume Slider -->
+                <div class="control-group">
+                    <label for="input-volume">Object Volume ($V$): <span id="label-volume">0.05</span> m³</label>
+                    <input type="range" id="input-volume" min="0.01" max="0.1" step="0.01" value="0.05">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="btn-drop" class="primary-btn">Drop Block 🌊</button>
+                    <button id="btn-reset" class="secondary-btn">Reset</button>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/space-animation.js"></script>
+    <script src="../js/fluids-sim.js"></script>
+</body>
+
+</html>

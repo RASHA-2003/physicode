@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Wave Motion Simulation</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Space Canvas Background -->
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <!-- Main Container -->
+    <div class="simulation-layout">
+
+        <!-- Header & Navigation -->
+        <header class="sim-header">
+            <a href="../index.html" class="back-btn">← Back to Orbits</a>
+            <div class="header-title">
+                <h1>Wave Motion Simulation</h1>
+                <span class="sub-title">Harmonic Oscillations & Wavelength</span>
+            </div>
+        </header>
+
+        <!-- Main Workplace -->
+        <main class="sim-workspace">
+
+            <!-- Canvas Simulation Screen -->
+            <div class="canvas-container">
+                <canvas id="sim-canvas"></canvas>
+
+                <!-- On-Screen Metrics Display -->
+                <div class="metrics-overlay">
+                    <div class="metric-card">
+                        <span class="metric-label">Wavelength ($\lambda$)</span>
+                        <span class="metric-value" id="val-wavelength">0.00 m</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Frequency ($f$)</span>
+                        <span class="metric-value" id="val-frequency">1.0 Hz</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Wave Speed ($v$)</span>
+                        <span class="metric-value" id="val-speed">0.00 m/s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <aside class="control-panel">
+                <h2>Wave Parameters</h2>
+
+                <!-- Amplitude Slider -->
+                <div class="control-group">
+                    <label for="input-amplitude">Amplitude ($A$): <span id="label-amplitude">50</span> px</label>
+                    <input type="range" id="input-amplitude" min="10" max="120" value="50">
+                </div>
+
+                <!-- Frequency Slider -->
+                <div class="control-group">
+                    <label for="input-frequency">Frequency ($f$): <span id="label-frequency">1.5</span> Hz</label>
+                    <input type="range" id="input-frequency" min="0.5" max="5.0" step="0.1" value="1.5">
+                </div>
+
+                <!-- Wave Speed Slider -->
+                <div class="control-group">
+                    <label for="input-speed">Propagation Speed: <span id="label-speed">200</span> px/s</label>
+                    <input type="range" id="input-speed" min="50" max="500" step="10" value="200">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="btn-toggle" class="primary-btn">Start Oscillation 🌊</button>
+                    <button id="btn-reset" class="secondary-btn">Reset</button>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/space-animation.js"></script>
+    <script src="../js/waves-sim.js"></script>
+</body>
+
+</html>

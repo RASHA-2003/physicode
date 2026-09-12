@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Electromagnetism Simulation</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <div class="simulation-layout">
+        <header class="sim-header">
+            <a href="../index.html" class="back-btn">← Back to Orbits</a>
+            <div class="header-title">
+                <h1>Electromagnetism</h1>
+                <span class="sub-title">Coulomb's Law & Electric Field Lines</span>
+            </div>
+        </header>
+
+        <main class="sim-workspace">
+            <div class="canvas-container">
+                <canvas id="sim-canvas"></canvas>
+                <div class="metrics-overlay">
+                    <div class="metric-card">
+                        <span class="metric-label">Electrostatic Force ($F$)</span>
+                        <span class="metric-value" id="val-force">0.00 N</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Force Type</span>
+                        <span class="metric-value" id="val-type">Repulsive</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="control-panel">
+                <h2>Charge Parameters</h2>
+                <div class="control-group">
+                    <label for="input-q1">Charge 1 ($q_1$): <span id="label-q1">+5</span> µC</label>
+                    <input type="range" id="input-q1" min="-10" max="10" value="5">
+                </div>
+                <div class="control-group">
+                    <label for="input-q2">Charge 2 ($q_2$): <span id="label-q2">-5</span> µC</label>
+                    <input type="range" id="input-q2" min="-10" max="10" value="-5">
+                </div>
+                <div class="button-group">
+                    <button id="btn-reset" class="secondary-btn" style="width: 100%;">Reset Charges</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="../js/space-animation.js"></script>
+    <script src="../js/em-sim.js"></script>
+</body>
+
+</html>

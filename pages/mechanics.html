@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Projectile Motion Simulation</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/simulation.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Space Canvas Background -->
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <!-- Main Container -->
+    <div class="simulation-layout">
+
+        <!-- Header & Navigation -->
+        <header class="sim-header">
+            <a href="../index.html" class="back-btn">← Back to Orbits</a>
+            <div class="header-title">
+                <h1>Mechanics Simulation</h1>
+                <span class="sub-title">Projectile Motion Lab</span>
+            </div>
+        </header>
+
+        <!-- Main Workplace -->
+        <main class="sim-workspace">
+
+            <!-- Canvas Simulation Screen -->
+            <div class="canvas-container">
+                <canvas id="sim-canvas"></canvas>
+
+                <!-- On-Screen Metrics Display -->
+                <div class="metrics-overlay">
+                    <div class="metric-card">
+                        <span class="metric-label">Max Height (H)</span>
+                        <span class="metric-value" id="val-height">0.00 m</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Distance (R)</span>
+                        <span class="metric-value" id="val-range">0.00 m</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-label">Time (t)</span>
+                        <span class="metric-value" id="val-time">0.00 s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Panel -->
+            <aside class="control-panel">
+                <h2>Physics Parameters</h2>
+
+                <!-- Initial Velocity Slider -->
+                <div class="control-group">
+                    <label for="input-velocity">Initial Velocity (v₀): <span id="label-velocity">50</span> m/s</label>
+                    <input type="range" id="input-velocity" min="10" max="100" value="50">
+                </div>
+
+                <!-- Launch Angle Slider -->
+                <div class="control-group">
+                    <label for="input-angle">Launch Angle (θ): <span id="label-angle">45</span>°</label>
+                    <input type="range" id="input-angle" min="5" max="85" value="45">
+                </div>
+
+                <!-- Gravity Select -->
+                <div class="control-group">
+                    <label for="input-gravity">Environment Gravity (g)</label>
+                    <select id="input-gravity">
+                        <option value="9.81">Earth (9.81 m/s²)</option>
+                        <option value="1.62">Moon (1.62 m/s²)</option>
+                        <option value="3.71">Mars (3.71 m/s²)</option>
+                        <option value="24.79">Jupiter (24.79 m/s²)</option>
+                    </select>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="btn-launch" class="primary-btn">Launch 🚀</button>
+                    <button id="btn-reset" class="secondary-btn">Reset</button>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/space-animation.js"></script>
+    <script src="../js/projectile-sim.js"></script>
+</body>
+
+</html>

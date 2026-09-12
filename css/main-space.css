@@ -1,0 +1,252 @@
+/* ==========================================================================
+   Global & Layout Setup
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #030712;
+    /* أزرق ليلي داكن عميق */
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background Canvas for Stars */
+.space-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#stars-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Main Container */
+.solar-system-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   Center Title & Branding
+   ========================================================================== */
+.center-core {
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.brand-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+}
+
+.brand-tagline {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #94a3b8;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Orbit System & Planetary Animations (FIXED REPOSITIONING)
+   ========================================================================== */
+.orbit-system {
+    position: relative;
+    width: 650px;
+    height: 650px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    animation: orbitRotate 60s linear infinite;
+}
+
+/* Pause orbit rotation on hover */
+.orbit-system:hover {
+    animation-play-state: paused;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Base styling for each planet container */
+.planet-node {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    margin-top: -45px;
+    margin-left: -45px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    /* Counter-rotate to keep labels straight & horizontal */
+    animation: counterRotate 60s linear infinite;
+}
+
+.orbit-system:hover .planet-node {
+    animation-play-state: paused;
+}
+
+@keyframes counterRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* Direct Positioning around the 650px Circle Orbit */
+#planet-mechanics {
+    top: 50%;
+    left: 100%;
+}
+
+/* 0 Degrees (Right) */
+#planet-gravity {
+    top: 93.3%;
+    left: 75%;
+}
+
+/* 60 Degrees (Bottom-Right) */
+#planet-waves {
+    top: 93.3%;
+    left: 25%;
+}
+
+/* 120 Degrees (Bottom-Left) */
+#planet-em {
+    top: 50%;
+    left: 0%;
+}
+
+/* 180 Degrees (Left) */
+#planet-fluids {
+    top: 6.7%;
+    left: 25%;
+}
+
+/* 240 Degrees (Top-Left) */
+#planet-quantum {
+    top: 6.7%;
+    left: 75%;
+}
+
+/* 300 Degrees (Top-Right) */
+
+/* ==========================================================================
+   Planet Graphics Styling
+   ========================================================================== */
+.planet-graphic {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+/* Mechanics (Earth/Green-Blue) */
+.earth {
+    background: radial-gradient(circle at 30% 30%, #38ef7d, #11998e, #0f2027);
+    box-shadow: 0 0 20px rgba(56, 239, 125, 0.4);
+}
+
+/* Gravity & Space (Sun/Orange) */
+.sun {
+    background: radial-gradient(circle at 30% 30%, #ffd200, #f7971e, #800c0c);
+    box-shadow: 0 0 25px rgba(247, 151, 30, 0.6);
+}
+
+/* Waves (Blue Neon) */
+.waves {
+    background: radial-gradient(circle at 30% 30%, #00d2ff, #3a7bd5, #000c40);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+}
+
+/* Electromagnetism (Purple Glowing) */
+.magnetism {
+    background: radial-gradient(circle at 30% 30%, #f355da, #7000ff, #1e0036);
+    box-shadow: 0 0 22px rgba(112, 0, 255, 0.6);
+}
+
+/* Fluids (Cyan/Water Transparency) */
+.fluids {
+    background: radial-gradient(circle at 30% 30%, #799f0c, #acbb0a, #1a3c40);
+    box-shadow: 0 0 18px rgba(172, 187, 10, 0.4);
+}
+
+/* Modern Physics (Quantum Fuchsia with Ring) */
+.quantum {
+    background: radial-gradient(circle at 30% 30%, #ff0844, #ffb199, #4a0011);
+    box-shadow: 0 0 22px rgba(255, 8, 68, 0.5);
+}
+
+.quantum::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75px;
+    height: 20px;
+    border: 2px solid rgba(255, 177, 153, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+}
+
+/* Labels */
+.planet-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #cbd5e1;
+    white-space: nowrap;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Interactive Hover Effects */
+.planet-node:hover .planet-graphic {
+    transform: scale(1.25);
+}
+
+.planet-node:hover .planet-label {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}

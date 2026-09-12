@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysiCode | Explore Physics. Simulate Reality.</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/main-space.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Space Background Layer -->
+    <div class="space-background">
+        <canvas id="stars-canvas"></canvas>
+    </div>
+
+    <!-- Solar System Container -->
+    <main class="solar-system-container">
+
+        <!-- Center Title & Branding -->
+        <div class="center-core">
+            <h1 class="brand-title" data-en="PhysiCode" data-ar="فيزي كود">PhysiCode</h1>
+            <p class="brand-tagline" data-en="Explore Physics. Simulate Reality."
+                data-ar="استكشف الفيزياء. حاكِ الواقع.">Explore Physics. Simulate Reality.</p>
+        </div>
+
+        <!-- Orbit System -->
+        <div class="orbit-system">
+
+            <!-- Mechanics -->
+            <a href="pages/mechanics.html" class="planet-node" id="planet-mechanics">
+                <div class="planet-graphic earth"></div>
+                <span class="planet-label" data-en="Mechanics" data-ar="الميكانيكا">Mechanics</span>
+            </a>
+
+            <!-- Gravity & Space -->
+            <a href="pages/gravity.html" class="planet-node" id="planet-gravity">
+                <div class="planet-graphic sun"></div>
+                <span class="planet-label" data-en="Gravity & Space" data-ar="الجاذبية والفضاء">Gravity & Space</span>
+            </a>
+
+            <!-- Waves -->
+            <a href="pages/waves.html" class="planet-node" id="planet-waves">
+                <div class="planet-graphic waves"></div>
+                <span class="planet-label" data-en="Waves" data-ar="الموجات والاهتزازات">Waves</span>
+            </a>
+
+            <!-- Electromagnetism -->
+            <a href="pages/electromagnetism.html" class="planet-node" id="planet-em">
+                <div class="planet-graphic magnetism"></div>
+                <span class="planet-label" data-en="Electromagnetism" data-ar="الكهرومغناطيسية">Electromagnetism</span>
+            </a>
+
+            <!-- Fluids -->
+            <a href="pages/fluids.html" class="planet-node" id="planet-fluids">
+                <div class="planet-graphic fluids"></div>
+                <span class="planet-label" data-en="Fluids" data-ar="السوائل والموائع">Fluids</span>
+            </a>
+
+            <!-- Modern Physics -->
+            <a href="pages/modern-physics.html" class="planet-node" id="planet-quantum">
+                <div class="planet-graphic quantum"></div>
+                <span class="planet-label" data-en="Modern Physics" data-ar="الفيزياء الحديثة">Modern Physics</span>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/space-animation.js"></script>
+    <script src="js/lang.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
