@@ -291,3 +291,147 @@ body {
         text-align: center;
     }
 }
+
+/* ==========================================
+   1. الإعدادات الأساسية (الشاشات الكبيرة واللابتوب)
+   ================================---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #0b0f19;
+    /* لون خلفية الفضاء الداكن */
+    font-family: 'Inter', sans-serif;
+}
+
+.solar-system-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.center-core {
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+}
+
+/* ==========================================
+   2. الشاشات المتوسطة والأجهزة اللوحية (الآيباد - Tablets & iPads)
+   ================================---------- */
+@media screen and (max-width: 1024px) {
+    .solar-system-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .center-core {
+        position: relative;
+        margin-bottom: 40px;
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+
+    /* تحويل النظام الدائري لشبكة مرنة تتناسب مع عرض الآيباد */
+    .orbit-system {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 600px;
+        height: auto !important;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        transform: none !important;
+    }
+
+    .planet-node {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 15px;
+        border-radius: 12px;
+        text-decoration: none;
+    }
+
+    .planet-graphic {
+        width: 35px !important;
+        height: 35px !important;
+        margin-right: 12px;
+    }
+
+    .planet-label {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        font-size: 0.95rem;
+        color: #fff;
+    }
+}
+
+/* ==========================================
+   3. شاشات الجوال والهواتف الذكية (Mobiles)
+   ================================---------- */
+@media screen and (max-width: 600px) {
+    .solar-system-container {
+        padding: 25px 15px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .center-core {
+        margin-bottom: 25px;
+    }
+
+    .brand-title {
+        font-size: 2rem !important;
+    }
+
+    .brand-tagline {
+        font-size: 0.85rem !important;
+    }
+
+    /* تحويل النظام لعمود واحد مرتب وسهل الضغط بالإصبع */
+    .orbit-system {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        gap: 12px;
+    }
+
+    .planet-node {
+        width: 100% !important;
+        padding: 14px 18px;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 10px;
+    }
+
+    .planet-graphic {
+        width: 30px !important;
+        height: 30px !important;
+        margin-right: 15px;
+    }
+
+    .planet-label {
+        font-size: 1rem;
+    }
+}
