@@ -250,3 +250,44 @@ body {
     color: #ffffff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
+
+@media screen and (max-width: 768px) {
+    .solar-system-container {
+        padding: 20px 10px;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .orbit-system {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        transform: none !important;
+    }
+
+    .planet-node {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        margin: 5px 0;
+        width: 80%;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .center-core {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
